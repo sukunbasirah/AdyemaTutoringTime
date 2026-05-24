@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adeyma Tutoring Time — Caring online lessons for women, girls & young children</title>
+<meta name="description" content="Warm, patient online tutoring with Adeyma. English, Arabic, Islamic Studies, basic Math and Qaida Noorania — for women and girls of all ages, and boys under 10.">
+
+<!-- =========================================================
+     ❤  ADEYMA — ALL SET UP & READY TO GO  ❤
+     Your Google Classroom link and email are already filled in
+     (see the <script> at the very bottom if you ever need to change them).
+     ========================================================= -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --cream:#FCFBF5;
+    --cream-2:#F1F4EA;
+    --silver:#DFE3DD;
+    --ink:#4E4636;
+    --ink-soft:#766B57;
+    --sage:#8BA471;
+    --sage-deep:#6E8A55;
+    --lav:#CBB6D6;
+    --lime:#D5DF86;
+    --mint:#C6E5DA;
+    --peach:#F7E2BC;
+    --white:#FFFFFF;
+    --shadow:0 18px 40px -22px rgba(78,70,54,.45);
+    --shadow-sm:0 10px 24px -16px rgba(78,70,54,.4);
+    --radius:26px;
+    --maxw:1080px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Nunito',sans-serif;
+    color:var(--ink);
+    background:linear-gradient(135deg,#FCFBF4 0%,#F4F7EC 48%,#EDF3E6 100%);
+    background-attachment:fixed;
+    line-height:1.65;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  /* slow silver shine drifting across the page */
+  body::before{
+    content:"";position:fixed;inset:-25%;z-index:-3;pointer-events:none;
+    background:linear-gradient(115deg,transparent 34%,rgba(255,255,255,.55) 46%,rgba(210,218,208,.22) 50%,rgba(255,255,255,.5) 54%,transparent 66%);
+    background-size:280% 280%;
+    animation:shine 16s ease-in-out infinite;
+    opacity:.75;
+  }
+  @keyframes shine{0%{background-position:0% 0%}50%{background-position:100% 100%}100%{background-position:0% 0%}}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;line-height:1.12;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+
+  /* soft beige-green atmosphere with gentle movement */
+  .blob{position:fixed;border-radius:50%;filter:blur(70px);opacity:.4;z-index:-2;pointer-events:none}
+  .blob.b1{width:520px;height:520px;background:var(--mint);top:-170px;right:-130px;animation:drift1 22s ease-in-out infinite}
+  .blob.b2{width:440px;height:440px;background:#E4ECD6;bottom:-150px;left:-130px;animation:drift2 26s ease-in-out infinite}
+  .blob.b3{width:380px;height:380px;background:var(--silver);top:42%;left:-170px;opacity:.32;animation:drift1 30s ease-in-out infinite}
+  @keyframes drift1{0%,100%{transform:translate(0,0)}50%{transform:translate(34px,-26px)}}
+  @keyframes drift2{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,24px)}}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:saturate(140%) blur(10px);
+    background:rgba(251,246,236,.82);
+    border-bottom:1px solid rgba(120,107,87,.1);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 22px;max-width:var(--maxw);margin:0 auto}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:800}
+  .brand .mark{width:46px;height:46px;flex:0 0 auto}
+  .brand .name{font-family:'Fraunces',serif;font-size:1.22rem;color:var(--sage-deep);letter-spacing:-.02em}
+  .nav-links{display:flex;align-items:center;gap:26px;font-weight:700;font-size:.96rem}
+  .nav-links a{color:var(--ink-soft);transition:color .2s}
+  .nav-links a:hover{color:var(--sage-deep)}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:'Nunito';font-weight:800;font-size:1rem;
+    padding:13px 24px;border-radius:999px;cursor:pointer;border:none;
+    transition:transform .18s ease, box-shadow .25s ease, background .2s;
+  }
+  .btn-primary{background:var(--sage);color:#fff;box-shadow:var(--shadow-sm)}
+  .btn-primary:hover{background:var(--sage-deep);transform:translateY(-2px)}
+  .btn-ghost{background:#fff;color:var(--sage-deep);border:2px solid rgba(139,164,113,.45)}
+  .btn-ghost:hover{transform:translateY(-2px);border-color:var(--sage)}
+  @media(max-width:760px){.nav-links{display:none}}
+
+  /* ---------- HERO ---------- */
+  header{position:relative;padding:70px 0 40px;text-align:center}
+  .hero-mark{width:138px;height:138px;margin:0 auto 26px;animation:floaty 6s ease-in-out infinite}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  .eyebrow{
+    display:inline-block;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    font-size:.74rem;color:var(--sage-deep);background:rgba(214,222,134,.4);
+    padding:7px 16px;border-radius:999px;margin-bottom:20px;
+  }
+  header h1{font-size:clamp(2.4rem,6vw,4rem);color:var(--ink);margin:0 auto;max-width:14ch}
+  header h1 em{font-style:italic;color:var(--sage-deep)}
+  .lead{font-size:clamp(1.05rem,2.2vw,1.28rem);color:var(--ink-soft);max-width:54ch;margin:22px auto 0;font-weight:500}
+  .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+
+  .trust{
+    display:flex;gap:10px;justify-content:center;flex-wrap:wrap;
+    margin-top:40px;font-weight:700;font-size:.9rem;color:var(--ink-soft);
+  }
+  .chip{background:#fff;border:1px solid rgba(120,107,87,.12);padding:9px 16px;border-radius:999px;box-shadow:var(--shadow-sm)}
+  .chip .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;vertical-align:middle}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:64px 0}
+  .sec-head{text-align:center;max-width:60ch;margin:0 auto 44px}
+  .sec-head h2{font-size:clamp(1.9rem,4vw,2.7rem);color:var(--ink)}
+  .sec-head p{color:var(--ink-soft);margin-top:12px;font-size:1.08rem;font-weight:500}
+
+  /* subjects */
+  .subjects{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+  .card{
+    background:#fff;border-radius:var(--radius);padding:30px 26px;
+    box-shadow:var(--shadow);border:1px solid rgba(120,107,87,.07);
+    position:relative;overflow:hidden;transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .card:hover{transform:translateY(-6px)}
+  .card .badge{width:54px;height:54px;border-radius:18px;display:grid;place-items:center;font-size:1.6rem;margin-bottom:18px}
+  .card h3{font-size:1.4rem;margin-bottom:8px;color:var(--ink)}
+  .card p{color:var(--ink-soft);font-size:1rem;font-weight:500}
+  .card .tag{display:inline-block;margin-top:14px;font-size:.8rem;font-weight:800;color:var(--sage-deep);background:rgba(198,229,218,.5);padding:5px 12px;border-radius:999px}
+  .card.feature{grid-column:span 2;background:linear-gradient(135deg,#fff, #FBF6EC)}
+  @media(max-width:560px){.card.feature{grid-column:span 1}}
+
+  /* who it's for */
+  .ages{background:var(--cream-2);border-radius:36px;padding:50px 30px;text-align:center}
+  .ages-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:22px;margin-top:34px}
+  .age-card{background:#fff;border-radius:22px;padding:26px 18px;box-shadow:var(--shadow-sm)}
+  .age-card .em{font-size:2.2rem}
+  .age-card h3{font-size:1.2rem;margin:10px 0 4px}
+  .age-card p{font-size:.94rem;color:var(--ink-soft);font-weight:500}
+
+  /* how it works */
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;counter-reset:step}
+  .step{background:#fff;border-radius:var(--radius);padding:30px 26px;box-shadow:var(--shadow-sm);position:relative}
+  .step .num{
+    font-family:'Fraunces',serif;font-size:1.1rem;font-weight:600;color:#fff;background:var(--sage);
+    width:40px;height:40px;border-radius:50%;display:grid;place-items:center;margin-bottom:16px;
+  }
+  .step h3{font-size:1.2rem;margin-bottom:7px}
+  .step p{color:var(--ink-soft);font-weight:500;font-size:.98rem}
+
+  /* pricing */
+  .price-wrap{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:680px;margin:0 auto}
+  @media(max-width:520px){.price-wrap{grid-template-columns:1fr}}
+  .price{
+    background:#fff;border-radius:var(--radius);padding:38px 30px;text-align:center;
+    box-shadow:var(--shadow);border:2px solid transparent;transition:transform .25s, border-color .25s;
+  }
+  .price:hover{transform:translateY(-5px);border-color:rgba(139,164,113,.35)}
+  .price .when{font-weight:800;color:var(--sage-deep);text-transform:uppercase;letter-spacing:.1em;font-size:.82rem}
+  .price .amt{font-family:'Fraunces',serif;font-size:3.2rem;color:var(--ink);margin:10px 0 4px}
+  .price .amt small{font-size:1.1rem;color:var(--ink-soft)}
+  .price .note{color:var(--ink-soft);font-weight:500;font-size:.94rem}
+  .price-foot{text-align:center;color:var(--ink-soft);font-weight:600;margin-top:24px;font-size:.96rem}
+
+  /* form */
+  .form-card{
+    background:linear-gradient(160deg,#fff,#F6EEDF);
+    border-radius:36px;padding:clamp(28px,5vw,52px);box-shadow:var(--shadow);
+    max-width:720px;margin:0 auto;border:1px solid rgba(120,107,87,.08);
+  }
+  .field{margin-bottom:18px}
+  label{display:block;font-weight:800;font-size:.92rem;margin-bottom:7px;color:var(--ink)}
+  input,select,textarea{
+    width:100%;font-family:'Nunito';font-size:1rem;font-weight:500;color:var(--ink);
+    padding:13px 16px;border-radius:16px;border:2px solid rgba(120,107,87,.16);
+    background:#fff;transition:border-color .2s, box-shadow .2s;
+  }
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--sage);box-shadow:0 0 0 4px rgba(139,164,113,.15)}
+  textarea{resize:vertical;min-height:96px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:520px){.grid2{grid-template-columns:1fr}}
+  .form-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+  .form-actions .btn{flex:1 1 auto;justify-content:center}
+  .form-hint{font-size:.86rem;color:var(--ink-soft);text-align:center;margin-top:16px;font-weight:600}
+
+  /* footer */
+  footer{background:var(--sage-deep);color:#fff;padding:54px 0 30px;margin-top:30px}
+  footer .wrap{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:center}
+  footer .name{font-family:'Fraunces',serif;font-size:1.5rem}
+  footer p{opacity:.9;font-weight:500;margin-top:6px;font-size:.95rem}
+  footer a{font-weight:800;text-decoration:underline;text-underline-offset:3px}
+  .copyright{text-align:center;opacity:.7;font-size:.84rem;margin-top:32px;font-weight:500}
+
+  /* about */
+  .about-card{display:grid;grid-template-columns:200px 1fr;gap:38px;align-items:center;padding:clamp(30px,5vw,50px)}
+  .about-card .bio p{color:var(--ink-soft);font-weight:500;margin-bottom:13px}
+  .about-card h2{font-size:clamp(1.8rem,4vw,2.5rem);color:var(--ink)}
+  .about-card .role{color:var(--sage-deep);font-weight:800;margin:6px 0 16px}
+  .about-card .chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
+  @media(max-width:680px){.about-card{grid-template-columns:1fr;gap:24px}}
+
+  /* reveal on scroll */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+<div class="blob b3"></div>
+
+<!-- reusable brand mark (SVG) -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <g id="adeyma-mark">
+      <circle cx="100" cy="100" r="92" fill="#fff"/>
+      <circle cx="168" cy="100" r="13" fill="#CBB6D6"/>
+      <circle cx="148" cy="148" r="13" fill="#D5DF86"/>
+      <circle cx="100" cy="168" r="13" fill="#C6E5DA"/>
+      <circle cx="52"  cy="148" r="13" fill="#F7E2BC"/>
+      <circle cx="32"  cy="100" r="13" fill="#CBB6D6"/>
+      <circle cx="52"  cy="52"  r="13" fill="#D5DF86"/>
+      <circle cx="100" cy="32"  r="13" fill="#C6E5DA"/>
+      <circle cx="148" cy="52"  r="13" fill="#F7E2BC"/>
+      <text x="100" y="116" text-anchor="middle" font-family="Fraunces, serif" font-size="46" font-weight="600" letter-spacing="1" fill="#8BA471">att</text>
+    </g>
+  </defs>
+</svg>
+
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 200 200" style="filter:drop-shadow(0 6px 12px rgba(78,70,54,.22))"><use href="#adeyma-mark"/></svg>
+      <span class="name">Adeyma Tutoring Time</span>
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#subjects">Subjects</a>
+      <a href="#ages">Who it's for</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+    </div>
+    <a class="btn btn-primary classroom-link" href="#" target="_blank" rel="noopener">Join the Classroom</a>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="wrap">
+    <svg class="hero-mark" viewBox="0 0 200 200" style="filter:drop-shadow(0 14px 26px rgba(78,70,54,.25))"><use href="#adeyma-mark"/></svg>
+    <span class="eyebrow">Friendly online tutoring · since 2023</span>
+    <h1>Learn with <em>Adeyma</em>, at your own pace</h1>
+    <p class="lead">Warm, patient one-to-one lessons online for women, girls and young children. You tell me what you'd like to learn, and together we build a plan that fits you — growing in confidence, one step at a time.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary classroom-link" href="#" target="_blank" rel="noopener">Join the Google Classroom</a>
+      <a class="btn btn-ghost" href="#enquire">Tell me what you'd like to learn</a>
+    </div>
+    <div class="trust">
+      <span class="chip"><span class="dot" style="background:var(--mint)"></span>100% online</span>
+      <span class="chip"><span class="dot" style="background:var(--lav)"></span>Girls &amp; women · all ages</span>
+      <span class="chip"><span class="dot" style="background:var(--lime)"></span>TEFL/TESOL certified</span>
+      <span class="chip"><span class="dot" style="background:var(--peach)"></span>From €5 a lesson</span>
+    </div>
+  </div>
+</header>
+
+<section id="subjects">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>What I teach</h2>
+      <p>A handful of subjects, taught with real care. Whether it's a first word or an exam, we go step by step.</p>
+    </div>
+    <div class="subjects">
+      <div class="card feature reveal">
+        <div class="badge" style="background:rgba(198,229,218,.55)">📚</div>
+        <h3>English</h3>
+        <p>My main love — and most of what I teach. Speaking, reading, writing, grammar and confidence, from complete beginners through to advanced learners and exam prep.</p>
+        <span class="tag">All ages · all levels</span>
+      </div>
+      <div class="card reveal">
+        <div class="badge" style="background:rgba(203,182,214,.5)">🕌</div>
+        <h3>Arabic</h3>
+        <p>Gentle, structured Arabic lessons up to <strong>Tamheedi 2</strong> level — building strong foundations one letter and word at a time.</p>
+        <span class="tag">Up to Tamheedi 2</span>
+      </div>
+      <div class="card reveal">
+        <div class="badge" style="background:rgba(213,223,134,.45)">🌙</div>
+        <h3>Islamic Studies</h3>
+        <p>Friendly lessons covering the essentials, explained clearly and patiently in a way that suits each learner's age.</p>
+        <span class="tag">Girls, women &amp; young boys</span>
+      </div>
+      <div class="card reveal">
+        <div class="badge" style="background:rgba(247,226,188,.6)">🔢</div>
+        <h3>Basic Math</h3>
+        <p>Numbers made fun and friendly — counting, sums and early problem-solving, designed especially for younger children.</p>
+        <span class="tag">For kids</span>
+      </div>
+      <div class="card reveal">
+        <div class="badge" style="background:rgba(198,229,218,.55)">🤲</div>
+        <h3>Qaida Noorania</h3>
+        <p>Step-by-step Qur'anic reading from the very beginning — correct letters, sounds and fluency, at a calm and steady pace.</p>
+        <span class="tag">Foundations of reading</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="about-card reveal">
+      <div style="text-align:center">
+        <svg viewBox="0 0 200 200" style="width:172px;height:172px;margin:0 auto;filter:drop-shadow(0 12px 24px rgba(78,70,54,.22))"><use href="#adeyma-mark"/></svg>
+      </div>
+      <div class="bio">
+        <h2>Assalamu alaikum wa rahmatullahi wa barakatuh 🌙</h2>
+        <p class="role">I'm Adeyma — the teacher behind Adeyma Tutoring Time</p>
+        <p>I'm a <strong>TEFL/TESOL-certified</strong> English teacher, and I've been tutoring since 2023 — warm, patient one-to-one lessons, all online, for women, girls and young children.</p>
+        <p>I'm also studying for a <strong>BSc in Psychology</strong>, which shapes the way I teach: lessons are gentle, encouraging and built around how each person really learns. A shy or struggling learner is always met with calm and kindness.</p>
+        <p>To keep things fun, I use lively tools like Kahoot, Blooket, Wordwall and Canva — with clear goals, gentle practice and homework that genuinely helps. I also speak Dutch, French and Arabic, which comes in handy when a child needs a little support in another language.</p>
+        <div class="chips">
+          <span class="chip"><span class="dot" style="background:var(--mint)"></span>TEFL/TESOL certified</span>
+          <span class="chip"><span class="dot" style="background:var(--lav)"></span>IELTS verified English</span>
+          <span class="chip"><span class="dot" style="background:var(--lime)"></span>BSc Psychology (in progress)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ages">
+  <div class="wrap">
+    <div class="ages reveal">
+      <div class="sec-head" style="margin-bottom:0">
+        <h2>Welcoming learners of every age</h2>
+        <p>I shape every lesson around the person in front of me — whether that's a curious little one or a grown-up returning to study.</p>
+      </div>
+      <div class="ages-row">
+        <div class="age-card"><div class="em">🧸</div><h3>Little ones</h3><p>Playful, gentle first lessons that keep young children curious and happy.</p></div>
+        <div class="age-card"><div class="em">🎒</div><h3>Teenagers</h3><p>School support, exam prep and confidence-building, at their own rhythm.</p></div>
+        <div class="age-card"><div class="em">☕</div><h3>Adults</h3><p>Flexible lessons that fit busy lives — no pressure, just steady progress.</p></div>
+      </div>
+      <p style="margin-top:30px;background:#fff;display:inline-block;padding:15px 24px;border-radius:18px;box-shadow:var(--shadow-sm);font-weight:600;color:var(--ink-soft);max-width:62ch;line-height:1.55">🤍 A respectful note: I warmly welcome <strong style="color:var(--sage-deep)">women and girls of all ages</strong>, and <strong style="color:var(--sage-deep)">boys up to 10 years old</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>How it works</h2>
+      <p>Simple and relaxed. Here's the whole journey, from hello to your first lesson.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="num">1</div><h3>Join the Classroom</h3><p>Tap the button to join my Google Classroom — that's our cosy home base for everything.</p></div>
+      <div class="step reveal"><div class="num">2</div><h3>Tell me your lesson</h3><p>Fill in who it's for, the subject you'd like, and what you're hoping to learn.</p></div>
+      <div class="step reveal"><div class="num">3</div><h3>We meet & chat</h3><p>We have a friendly first meeting to understand the level, goals and what works best.</p></div>
+      <div class="step reveal"><div class="num">4</div><h3>We build it up</h3><p>Together we shape a plan and grow from there — one comfortable step at a time.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Simple, honest pricing</h2>
+      <p>No hidden fees. Just clear, fair rates for caring one-to-one lessons.</p>
+    </div>
+    <div class="price-wrap reveal">
+      <div class="price">
+        <div class="when">Full lesson</div>
+        <div class="amt">€10<small> / hour</small></div>
+        <div class="note">A full hour to dive in properly — ideal for steady progress.</div>
+      </div>
+      <div class="price">
+        <div class="when">Short lesson</div>
+        <div class="amt">€5<small> / 30 min</small></div>
+        <div class="note">A shorter session — lovely for young children or a quick top-up.</div>
+      </div>
+    </div>
+    <p class="price-foot reveal">Not sure which fits you? Just ask below and we'll figure it out together. 🌿</p>
+  </div>
+</section>
+
+<section id="enquire">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Tell me what you'd like to learn</h2>
+      <p>Fill this in and it'll send me a friendly email. After that, we'll arrange our first meeting.</p>
+    </div>
+    <div class="form-card reveal">
+      <div class="grid2">
+        <div class="field">
+          <label for="f-name">Your name</label>
+          <input id="f-name" type="text" placeholder="e.g. Sara">
+        </div>
+        <div class="field">
+          <label for="f-who">Who is the lesson for?</label>
+          <select id="f-who">
+            <option>Myself</option>
+            <option>My daughter</option>
+            <option>My son (under 10)</option>
+            <option>Someone else</option>
+          </select>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="field">
+          <label for="f-subject">Which subject?</label>
+          <select id="f-subject">
+            <option>English</option>
+            <option>Arabic (up to Tamheedi 2)</option>
+            <option>Islamic Studies</option>
+            <option>Basic Math (for kids)</option>
+            <option>Qaida Noorania</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-length">Lesson length</label>
+          <select id="f-length">
+            <option>1 hour — €10</option>
+            <option>30 minutes — €5</option>
+            <option>Let's decide together</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-goal">What would you like to learn or improve?</label>
+        <textarea id="f-goal" placeholder="e.g. I'd love to improve my spoken English — or my daughter is starting to read and needs gentle help."></textarea>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-primary" onclick="sendEmail()">Send my message ✉️</button>
+      </div>
+      <p class="form-hint">This opens a ready-written email to Adeyma in your mail app — nothing is stored on this page.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="name">Adeyma Tutoring Time</div>
+      <p>Failing is part of learning — let's find the right direction</p>
+    </div>
+    <div style="text-align:right">
+      <p><a href="#" class="classroom-link" target="_blank" rel="noopener">Join the Google Classroom →</a></p>
+      <p style="margin-top:8px"><a href="mailto:Adeymatutoringtime@gmail.com">Adeymatutoringtime@gmail.com</a></p>
+    </div>
+  </div>
+  <div class="copyright">© <span id="year"></span> Learn with Adeyma · Made with care 🌿</div>
+</footer>
+
+<script>
+  /* =======================================================
+     ❤  ADEYMA — your details (already filled in)  ❤
+     ======================================================= */
+  const CLASSROOM_URL = "https://classroom.google.com/c/ODYwOTI3NjgwOTE0?cjc=35kvqlpp";
+  const EMAIL         = "Adeymatutoringtime@gmail.com";
+  /* ======================================================= */
+
+  // wire up every "Join the Classroom" link
+  document.querySelectorAll('.classroom-link').forEach(a => { a.href = CLASSROOM_URL; });
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  function buildMessage(){
+    const name = document.getElementById('f-name').value.trim() || "(no name given)";
+    const who = document.getElementById('f-who').value;
+    const subject = document.getElementById('f-subject').value;
+    const length = document.getElementById('f-length').value;
+    const goal = document.getElementById('f-goal').value.trim() || "(nothing written yet)";
+    return `Assalamu alaikum Adeyma! 🌙\n\nName: ${name}\nLesson for: ${who}\nSubject: ${subject}\nLesson length: ${length}\n\nWhat I'd like to learn:\n${goal}`;
+  }
+
+  function sendEmail(){
+    const subject = encodeURIComponent("New lesson enquiry from your website");
+    const body = encodeURIComponent(buildMessage());
+    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+  }
+
+  // gentle scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  }, {threshold:.14});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
