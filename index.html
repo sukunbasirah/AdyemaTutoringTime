@@ -6,12 +6,6 @@
 <title>Adeyma Tutoring Time — Caring online lessons for women, girls & young children</title>
 <meta name="description" content="Warm, patient online tutoring with Adeyma. English, Arabic, Islamic Studies, basic Math and Qaida Noorania — for women and girls of all ages, and boys under 10.">
 
-<!-- =========================================================
-     ❤  ADEYMA — ALL SET UP & READY TO GO  ❤
-     Your Google Classroom link and email are already filled in
-     (see the <script> at the very bottom if you ever need to change them).
-     ========================================================= -->
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -47,7 +41,6 @@
     overflow-x:hidden;
     -webkit-font-smoothing:antialiased;
   }
-  /* slow silver shine drifting across the page */
   body::before{
     content:"";position:fixed;inset:-25%;z-index:-3;pointer-events:none;
     background:linear-gradient(115deg,transparent 34%,rgba(255,255,255,.55) 46%,rgba(210,218,208,.22) 50%,rgba(255,255,255,.5) 54%,transparent 66%);
@@ -60,7 +53,6 @@
   a{color:inherit;text-decoration:none}
   img{max-width:100%;display:block}
 
-  /* soft beige-green atmosphere with gentle movement */
   .blob{position:fixed;border-radius:50%;filter:blur(70px);opacity:.4;z-index:-2;pointer-events:none}
   .blob.b1{width:520px;height:520px;background:var(--mint);top:-170px;right:-130px;animation:drift1 22s ease-in-out infinite}
   .blob.b2{width:440px;height:440px;background:#E4ECD6;bottom:-150px;left:-130px;animation:drift2 26s ease-in-out infinite}
@@ -70,7 +62,6 @@
 
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
 
-  /* ---------- NAV ---------- */
   nav{
     position:sticky;top:0;z-index:50;
     backdrop-filter:saturate(140%) blur(10px);
@@ -84,6 +75,21 @@
   .nav-links{display:flex;align-items:center;gap:26px;font-weight:700;font-size:.96rem}
   .nav-links a{color:var(--ink-soft);transition:color .2s}
   .nav-links a:hover{color:var(--sage-deep)}
+  .nav-right{display:flex;align-items:center;gap:14px}
+
+  /* language switcher */
+  .lang{
+    display:inline-flex;align-items:center;background:#fff;border:1px solid rgba(120,107,87,.18);
+    border-radius:999px;padding:3px;box-shadow:var(--shadow-sm);
+  }
+  .lang button{
+    font-family:'Nunito',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.06em;
+    color:var(--ink-soft);background:transparent;border:none;cursor:pointer;
+    padding:6px 11px;border-radius:999px;transition:background .2s,color .2s;
+  }
+  .lang button:hover{color:var(--sage-deep)}
+  .lang button.active{background:var(--sage);color:#fff}
+
   .btn{
     display:inline-flex;align-items:center;gap:9px;
     font-family:'Nunito';font-weight:800;font-size:1rem;
@@ -94,9 +100,9 @@
   .btn-primary:hover{background:var(--sage-deep);transform:translateY(-2px)}
   .btn-ghost{background:#fff;color:var(--sage-deep);border:2px solid rgba(139,164,113,.45)}
   .btn-ghost:hover{transform:translateY(-2px);border-color:var(--sage)}
-  @media(max-width:760px){.nav-links{display:none}}
+  @media(max-width:880px){.nav-links{display:none}}
+  @media(max-width:560px){.nav-right .btn{display:none}}
 
-  /* ---------- HERO ---------- */
   header{position:relative;padding:70px 0 40px;text-align:center}
   .hero-mark{width:138px;height:138px;margin:0 auto 26px;animation:floaty 6s ease-in-out infinite}
   @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
@@ -117,13 +123,11 @@
   .chip{background:#fff;border:1px solid rgba(120,107,87,.12);padding:9px 16px;border-radius:999px;box-shadow:var(--shadow-sm)}
   .chip .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;vertical-align:middle}
 
-  /* ---------- SECTIONS ---------- */
   section{padding:64px 0}
   .sec-head{text-align:center;max-width:60ch;margin:0 auto 44px}
   .sec-head h2{font-size:clamp(1.9rem,4vw,2.7rem);color:var(--ink)}
   .sec-head p{color:var(--ink-soft);margin-top:12px;font-size:1.08rem;font-weight:500}
 
-  /* subjects */
   .subjects{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
   .card{
     background:#fff;border-radius:var(--radius);padding:30px 26px;
@@ -138,7 +142,6 @@
   .card.feature{grid-column:span 2;background:linear-gradient(135deg,#fff, #FBF6EC)}
   @media(max-width:560px){.card.feature{grid-column:span 1}}
 
-  /* who it's for */
   .ages{background:var(--cream-2);border-radius:36px;padding:50px 30px;text-align:center}
   .ages-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:22px;margin-top:34px}
   .age-card{background:#fff;border-radius:22px;padding:26px 18px;box-shadow:var(--shadow-sm)}
@@ -146,7 +149,6 @@
   .age-card h3{font-size:1.2rem;margin:10px 0 4px}
   .age-card p{font-size:.94rem;color:var(--ink-soft);font-weight:500}
 
-  /* how it works */
   .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;counter-reset:step}
   .step{background:#fff;border-radius:var(--radius);padding:30px 26px;box-shadow:var(--shadow-sm);position:relative}
   .step .num{
@@ -156,7 +158,6 @@
   .step h3{font-size:1.2rem;margin-bottom:7px}
   .step p{color:var(--ink-soft);font-weight:500;font-size:.98rem}
 
-  /* pricing */
   .price-wrap{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:680px;margin:0 auto}
   @media(max-width:520px){.price-wrap{grid-template-columns:1fr}}
   .price{
@@ -170,7 +171,6 @@
   .price .note{color:var(--ink-soft);font-weight:500;font-size:.94rem}
   .price-foot{text-align:center;color:var(--ink-soft);font-weight:600;margin-top:24px;font-size:.96rem}
 
-  /* form */
   .form-card{
     background:linear-gradient(160deg,#fff,#F6EEDF);
     border-radius:36px;padding:clamp(28px,5vw,52px);box-shadow:var(--shadow);
@@ -191,7 +191,6 @@
   .form-actions .btn{flex:1 1 auto;justify-content:center}
   .form-hint{font-size:.86rem;color:var(--ink-soft);text-align:center;margin-top:16px;font-weight:600}
 
-  /* footer */
   footer{background:var(--sage-deep);color:#fff;padding:54px 0 30px;margin-top:30px}
   footer .wrap{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:center}
   footer .name{font-family:'Fraunces',serif;font-size:1.5rem}
@@ -199,7 +198,6 @@
   footer a{font-weight:800;text-decoration:underline;text-underline-offset:3px}
   .copyright{text-align:center;opacity:.7;font-size:.84rem;margin-top:32px;font-weight:500}
 
-  /* about */
   .about-card{display:grid;grid-template-columns:200px 1fr;gap:38px;align-items:center;padding:clamp(30px,5vw,50px)}
   .about-card .bio p{color:var(--ink-soft);font-weight:500;margin-bottom:13px}
   .about-card h2{font-size:clamp(1.8rem,4vw,2.5rem);color:var(--ink)}
@@ -207,7 +205,6 @@
   .about-card .chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
   @media(max-width:680px){.about-card{grid-template-columns:1fr;gap:24px}}
 
-  /* reveal on scroll */
   .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease}
   .reveal.in{opacity:1;transform:none}
 </style>
@@ -218,7 +215,6 @@
 <div class="blob b2"></div>
 <div class="blob b3"></div>
 
-<!-- reusable brand mark (SVG) -->
 <svg width="0" height="0" style="position:absolute">
   <defs>
     <g id="adeyma-mark">
@@ -243,31 +239,38 @@
       <span class="name">Adeyma Tutoring Time</span>
     </a>
     <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#subjects">Subjects</a>
-      <a href="#ages">Who it's for</a>
-      <a href="#how">How it works</a>
-      <a href="#pricing">Pricing</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#subjects" data-i18n="nav.subjects">Subjects</a>
+      <a href="#ages" data-i18n="nav.who">Who it's for</a>
+      <a href="#how" data-i18n="nav.how">How it works</a>
+      <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
     </div>
-    <a class="btn btn-primary classroom-link" href="#" target="_blank" rel="noopener">Join the Classroom</a>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <button data-lang="en" aria-label="English">EN</button>
+        <button data-lang="fr" aria-label="Français">FR</button>
+        <button data-lang="nl" aria-label="Nederlands">NL</button>
+      </div>
+      <a class="btn btn-primary classroom-link" href="#" target="_blank" rel="noopener" data-i18n="nav.join">Join the Classroom</a>
+    </div>
   </div>
 </nav>
 
 <header id="top">
   <div class="wrap">
     <svg class="hero-mark" viewBox="0 0 200 200" style="filter:drop-shadow(0 14px 26px rgba(78,70,54,.25))"><use href="#adeyma-mark"/></svg>
-    <span class="eyebrow">Friendly online tutoring · since 2023</span>
-    <h1>Learn with <em>Adeyma</em>, at your own pace</h1>
-    <p class="lead">Warm, patient one-to-one lessons online for women, girls and young children. You tell me what you'd like to learn, and together we build a plan that fits you — growing in confidence, one step at a time.</p>
+    <span class="eyebrow" data-i18n="hero.eyebrow">Friendly online tutoring · since 2023</span>
+    <h1 data-i18n-html="hero.title">Learn with <em>Adeyma</em>, at your own pace</h1>
+    <p class="lead" data-i18n="hero.lead">Warm, patient one-to-one lessons online for women, girls and young children. You tell me what you'd like to learn, and together we build a plan that fits you — growing in confidence, one step at a time.</p>
     <div class="hero-cta">
-      <a class="btn btn-primary classroom-link" href="#" target="_blank" rel="noopener">Join the Google Classroom</a>
-      <a class="btn btn-ghost" href="#enquire">Tell me what you'd like to learn</a>
+      <a class="btn btn-primary classroom-link" href="#" target="_blank" rel="noopener" data-i18n="hero.cta1">Join the Google Classroom</a>
+      <a class="btn btn-ghost" href="#enquire" data-i18n="hero.cta2">Tell me what you'd like to learn</a>
     </div>
     <div class="trust">
-      <span class="chip"><span class="dot" style="background:var(--mint)"></span>100% online</span>
-      <span class="chip"><span class="dot" style="background:var(--lav)"></span>Girls &amp; women · all ages</span>
-      <span class="chip"><span class="dot" style="background:var(--lime)"></span>TEFL/TESOL certified</span>
-      <span class="chip"><span class="dot" style="background:var(--peach)"></span>From €5 a lesson</span>
+      <span class="chip"><span class="dot" style="background:var(--mint)"></span><span data-i18n="trust.online">100% online</span></span>
+      <span class="chip"><span class="dot" style="background:var(--lav)"></span><span data-i18n="trust.audience">Girls &amp; women · all ages</span></span>
+      <span class="chip"><span class="dot" style="background:var(--lime)"></span><span data-i18n="trust.cert">TEFL/TESOL certified</span></span>
+      <span class="chip"><span class="dot" style="background:var(--peach)"></span><span data-i18n="trust.from">From €5 a lesson</span></span>
     </div>
   </div>
 </header>
@@ -275,39 +278,39 @@
 <section id="subjects">
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>What I teach</h2>
-      <p>A handful of subjects, taught with real care. Whether it's a first word or an exam, we go step by step.</p>
+      <h2 data-i18n="subjects.h">What I teach</h2>
+      <p data-i18n="subjects.p">A handful of subjects, taught with real care. Whether it's a first word or an exam, we go step by step.</p>
     </div>
     <div class="subjects">
       <div class="card feature reveal">
         <div class="badge" style="background:rgba(198,229,218,.55)">📚</div>
-        <h3>English</h3>
-        <p>My main love — and most of what I teach. Speaking, reading, writing, grammar and confidence, from complete beginners through to advanced learners and exam prep.</p>
-        <span class="tag">All ages · all levels</span>
+        <h3 data-i18n="subj.english.title">English</h3>
+        <p data-i18n="subj.english.body">My main love — and most of what I teach. Speaking, reading, writing, grammar and confidence, from complete beginners through to advanced learners and exam prep.</p>
+        <span class="tag" data-i18n="subj.english.tag">All ages · all levels</span>
       </div>
       <div class="card reveal">
         <div class="badge" style="background:rgba(203,182,214,.5)">🕌</div>
-        <h3>Arabic</h3>
-        <p>Gentle, structured Arabic lessons up to <strong>Tamheedi 2</strong> level — building strong foundations one letter and word at a time.</p>
-        <span class="tag">Up to Tamheedi 2</span>
+        <h3 data-i18n="subj.arabic.title">Arabic</h3>
+        <p data-i18n-html="subj.arabic.body">Gentle, structured Arabic lessons up to <strong>Tamheedi 2</strong> level — building strong foundations one letter and word at a time.</p>
+        <span class="tag" data-i18n="subj.arabic.tag">Up to Tamheedi 2</span>
       </div>
       <div class="card reveal">
         <div class="badge" style="background:rgba(213,223,134,.45)">🌙</div>
-        <h3>Islamic Studies</h3>
-        <p>Friendly lessons covering the essentials, explained clearly and patiently in a way that suits each learner's age.</p>
-        <span class="tag">Girls, women &amp; young boys</span>
+        <h3 data-i18n="subj.islamic.title">Islamic Studies</h3>
+        <p data-i18n="subj.islamic.body">Friendly lessons covering the essentials, explained clearly and patiently in a way that suits each learner's age.</p>
+        <span class="tag" data-i18n="subj.islamic.tag">Girls, women &amp; young boys</span>
       </div>
       <div class="card reveal">
         <div class="badge" style="background:rgba(247,226,188,.6)">🔢</div>
-        <h3>Basic Math</h3>
-        <p>Numbers made fun and friendly — counting, sums and early problem-solving, designed especially for younger children.</p>
-        <span class="tag">For kids</span>
+        <h3 data-i18n="subj.math.title">Basic Math</h3>
+        <p data-i18n="subj.math.body">Numbers made fun and friendly — counting, sums and early problem-solving, designed especially for younger children.</p>
+        <span class="tag" data-i18n="subj.math.tag">For kids</span>
       </div>
       <div class="card reveal">
         <div class="badge" style="background:rgba(198,229,218,.55)">🤲</div>
-        <h3>Qaida Noorania</h3>
-        <p>Step-by-step Qur'anic reading from the very beginning — correct letters, sounds and fluency, at a calm and steady pace.</p>
-        <span class="tag">Foundations of reading</span>
+        <h3 data-i18n="subj.qaida.title">Qaida Noorania</h3>
+        <p data-i18n="subj.qaida.body">Step-by-step Qur'anic reading from the very beginning — correct letters, sounds and fluency, at a calm and steady pace.</p>
+        <span class="tag" data-i18n="subj.qaida.tag">Foundations of reading</span>
       </div>
     </div>
   </div>
@@ -320,15 +323,15 @@
         <svg viewBox="0 0 200 200" style="width:172px;height:172px;margin:0 auto;filter:drop-shadow(0 12px 24px rgba(78,70,54,.22))"><use href="#adeyma-mark"/></svg>
       </div>
       <div class="bio">
-        <h2>Assalamu alaikum wa rahmatullahi wa barakatuh 🌙</h2>
-        <p class="role">I'm Adeyma — the teacher behind Adeyma Tutoring Time</p>
-        <p>I'm a <strong>TEFL/TESOL-certified</strong> English teacher, and I've been tutoring since 2023 — warm, patient one-to-one lessons, all online, for women, girls and young children.</p>
-        <p>I'm also studying for a <strong>BSc in Psychology</strong>, which shapes the way I teach: lessons are gentle, encouraging and built around how each person really learns. A shy or struggling learner is always met with calm and kindness.</p>
-        <p>To keep things fun, I use lively tools like Kahoot, Blooket, Wordwall and Canva — with clear goals, gentle practice and homework that genuinely helps. I also speak Dutch, French and Arabic, which comes in handy when a child needs a little support in another language.</p>
+        <h2 data-i18n="about.greet">Assalamu alaikum wa rahmatullahi wa barakatuh 🌙</h2>
+        <p class="role" data-i18n="about.role">I'm Adeyma — the teacher behind Adeyma Tutoring Time</p>
+        <p data-i18n-html="about.p1">I'm a <strong>TEFL/TESOL-certified</strong> English teacher, and I've been tutoring since 2023 — warm, patient one-to-one lessons, all online, for women, girls and young children.</p>
+        <p data-i18n-html="about.p2">I'm also studying for a <strong>BSc in Psychology</strong>, which shapes the way I teach: lessons are gentle, encouraging and built around how each person really learns. A shy or struggling learner is always met with calm and kindness.</p>
+        <p data-i18n="about.p3">To keep things fun, I use lively tools like Kahoot, Blooket, Wordwall and Canva — with clear goals, gentle practice and homework that genuinely helps. I also speak Dutch, French and Arabic, which comes in handy when a child needs a little support in another language.</p>
         <div class="chips">
-          <span class="chip"><span class="dot" style="background:var(--mint)"></span>TEFL/TESOL certified</span>
-          <span class="chip"><span class="dot" style="background:var(--lav)"></span>IELTS verified English</span>
-          <span class="chip"><span class="dot" style="background:var(--lime)"></span>BSc Psychology (in progress)</span>
+          <span class="chip"><span class="dot" style="background:var(--mint)"></span><span data-i18n="about.chip1">TEFL/TESOL certified</span></span>
+          <span class="chip"><span class="dot" style="background:var(--lav)"></span><span data-i18n="about.chip2">IELTS verified English</span></span>
+          <span class="chip"><span class="dot" style="background:var(--lime)"></span><span data-i18n="about.chip3">BSc Psychology (in progress)</span></span>
         </div>
       </div>
     </div>
@@ -339,15 +342,15 @@
   <div class="wrap">
     <div class="ages reveal">
       <div class="sec-head" style="margin-bottom:0">
-        <h2>Welcoming learners of every age</h2>
-        <p>I shape every lesson around the person in front of me — whether that's a curious little one or a grown-up returning to study.</p>
+        <h2 data-i18n="ages.h">Welcoming learners of every age</h2>
+        <p data-i18n="ages.p">I shape every lesson around the person in front of me — whether that's a curious little one or a grown-up returning to study.</p>
       </div>
       <div class="ages-row">
-        <div class="age-card"><div class="em">🧸</div><h3>Little ones</h3><p>Playful, gentle first lessons that keep young children curious and happy.</p></div>
-        <div class="age-card"><div class="em">🎒</div><h3>Teenagers</h3><p>School support, exam prep and confidence-building, at their own rhythm.</p></div>
-        <div class="age-card"><div class="em">☕</div><h3>Adults</h3><p>Flexible lessons that fit busy lives — no pressure, just steady progress.</p></div>
+        <div class="age-card"><div class="em">🧸</div><h3 data-i18n="ages.little.t">Little ones</h3><p data-i18n="ages.little.b">Playful, gentle first lessons that keep young children curious and happy.</p></div>
+        <div class="age-card"><div class="em">🎒</div><h3 data-i18n="ages.teen.t">Teenagers</h3><p data-i18n="ages.teen.b">School support, exam prep and confidence-building, at their own rhythm.</p></div>
+        <div class="age-card"><div class="em">☕</div><h3 data-i18n="ages.adult.t">Adults</h3><p data-i18n="ages.adult.b">Flexible lessons that fit busy lives — no pressure, just steady progress.</p></div>
       </div>
-      <p style="margin-top:30px;background:#fff;display:inline-block;padding:15px 24px;border-radius:18px;box-shadow:var(--shadow-sm);font-weight:600;color:var(--ink-soft);max-width:62ch;line-height:1.55">🤍 A respectful note: I warmly welcome <strong style="color:var(--sage-deep)">women and girls of all ages</strong>, and <strong style="color:var(--sage-deep)">boys up to 10 years old</strong>.</p>
+      <p style="margin-top:30px;background:#fff;display:inline-block;padding:15px 24px;border-radius:18px;box-shadow:var(--shadow-sm);font-weight:600;color:var(--ink-soft);max-width:62ch;line-height:1.55" data-i18n-html="ages.note">🤍 A respectful note: I warmly welcome <strong style="color:var(--sage-deep)">women and girls of all ages</strong>, and <strong style="color:var(--sage-deep)">boys up to 10 years old</strong>.</p>
     </div>
   </div>
 </section>
@@ -355,14 +358,14 @@
 <section id="how">
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>How it works</h2>
-      <p>Simple and relaxed. Here's the whole journey, from hello to your first lesson.</p>
+      <h2 data-i18n="how.h">How it works</h2>
+      <p data-i18n="how.p">Simple and relaxed. Here's the whole journey, from hello to your first lesson.</p>
     </div>
     <div class="steps">
-      <div class="step reveal"><div class="num">1</div><h3>Join the Classroom</h3><p>Tap the button to join my Google Classroom — that's our cosy home base for everything.</p></div>
-      <div class="step reveal"><div class="num">2</div><h3>Tell me your lesson</h3><p>Fill in who it's for, the subject you'd like, and what you're hoping to learn.</p></div>
-      <div class="step reveal"><div class="num">3</div><h3>We meet & chat</h3><p>We have a friendly first meeting to understand the level, goals and what works best.</p></div>
-      <div class="step reveal"><div class="num">4</div><h3>We build it up</h3><p>Together we shape a plan and grow from there — one comfortable step at a time.</p></div>
+      <div class="step reveal"><div class="num">1</div><h3 data-i18n="how.s1t">Join the Classroom</h3><p data-i18n="how.s1b">Tap the button to join my Google Classroom — that's our cosy home base for everything.</p></div>
+      <div class="step reveal"><div class="num">2</div><h3 data-i18n="how.s2t">Tell me your lesson</h3><p data-i18n="how.s2b">Fill in who it's for, the subject you'd like, and what you're hoping to learn.</p></div>
+      <div class="step reveal"><div class="num">3</div><h3 data-i18n="how.s3t">We meet &amp; chat</h3><p data-i18n="how.s3b">We have a friendly first meeting to understand the level, goals and what works best.</p></div>
+      <div class="step reveal"><div class="num">4</div><h3 data-i18n="how.s4t">We build it up</h3><p data-i18n="how.s4b">Together we shape a plan and grow from there — one comfortable step at a time.</p></div>
     </div>
   </div>
 </section>
@@ -370,76 +373,76 @@
 <section id="pricing">
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>Simple, honest pricing</h2>
-      <p>No hidden fees. Just clear, fair rates for caring one-to-one lessons.</p>
+      <h2 data-i18n="pricing.h">Simple, honest pricing</h2>
+      <p data-i18n="pricing.p">No hidden fees. Just clear, fair rates for caring one-to-one lessons.</p>
     </div>
     <div class="price-wrap reveal">
       <div class="price">
-        <div class="when">Full lesson</div>
-        <div class="amt">€10<small> / hour</small></div>
-        <div class="note">A full hour to dive in properly — ideal for steady progress.</div>
+        <div class="when" data-i18n="pricing.full.when">Full lesson</div>
+        <div class="amt">€10<small data-i18n="pricing.full.unit"> / hour</small></div>
+        <div class="note" data-i18n="pricing.full.note">A full hour to dive in properly — ideal for steady progress.</div>
       </div>
       <div class="price">
-        <div class="when">Short lesson</div>
-        <div class="amt">€5<small> / 30 min</small></div>
-        <div class="note">A shorter session — lovely for young children or a quick top-up.</div>
+        <div class="when" data-i18n="pricing.short.when">Short lesson</div>
+        <div class="amt">€5<small data-i18n="pricing.short.unit"> / 30 min</small></div>
+        <div class="note" data-i18n="pricing.short.note">A shorter session — lovely for young children or a quick top-up.</div>
       </div>
     </div>
-    <p class="price-foot reveal">Not sure which fits you? Just ask below and we'll figure it out together. 🌿</p>
+    <p class="price-foot reveal" data-i18n="pricing.foot">Not sure which fits you? Just ask below and we'll figure it out together. 🌿</p>
   </div>
 </section>
 
 <section id="enquire">
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>Tell me what you'd like to learn</h2>
-      <p>Fill this in and it'll send me a friendly email. After that, we'll arrange our first meeting.</p>
+      <h2 data-i18n="enquire.h">Tell me what you'd like to learn</h2>
+      <p data-i18n="enquire.p">Fill this in and it'll send me a friendly email. After that, we'll arrange our first meeting.</p>
     </div>
     <div class="form-card reveal">
       <div class="grid2">
         <div class="field">
-          <label for="f-name">Your name</label>
-          <input id="f-name" type="text" placeholder="e.g. Sara">
+          <label for="f-name" data-i18n="form.name">Your name</label>
+          <input id="f-name" type="text" data-i18n-placeholder="form.name.placeholder" placeholder="e.g. Sara">
         </div>
         <div class="field">
-          <label for="f-who">Who is the lesson for?</label>
+          <label for="f-who" data-i18n="form.who">Who is the lesson for?</label>
           <select id="f-who">
-            <option>Myself</option>
-            <option>My daughter</option>
-            <option>My son (under 10)</option>
-            <option>Someone else</option>
+            <option data-i18n="form.who.1">Myself</option>
+            <option data-i18n="form.who.2">My daughter</option>
+            <option data-i18n="form.who.3">My son (under 10)</option>
+            <option data-i18n="form.who.4">Someone else</option>
           </select>
         </div>
       </div>
       <div class="grid2">
         <div class="field">
-          <label for="f-subject">Which subject?</label>
+          <label for="f-subject" data-i18n="form.subject">Which subject?</label>
           <select id="f-subject">
-            <option>English</option>
-            <option>Arabic (up to Tamheedi 2)</option>
-            <option>Islamic Studies</option>
-            <option>Basic Math (for kids)</option>
-            <option>Qaida Noorania</option>
-            <option>Not sure yet</option>
+            <option data-i18n="form.subj.1">English</option>
+            <option data-i18n="form.subj.2">Arabic (up to Tamheedi 2)</option>
+            <option data-i18n="form.subj.3">Islamic Studies</option>
+            <option data-i18n="form.subj.4">Basic Math (for kids)</option>
+            <option data-i18n="form.subj.5">Qaida Noorania</option>
+            <option data-i18n="form.subj.6">Not sure yet</option>
           </select>
         </div>
         <div class="field">
-          <label for="f-length">Lesson length</label>
+          <label for="f-length" data-i18n="form.length">Lesson length</label>
           <select id="f-length">
-            <option>1 hour — €10</option>
-            <option>30 minutes — €5</option>
-            <option>Let's decide together</option>
+            <option data-i18n="form.len.1">1 hour — €10</option>
+            <option data-i18n="form.len.2">30 minutes — €5</option>
+            <option data-i18n="form.len.3">Let's decide together</option>
           </select>
         </div>
       </div>
       <div class="field">
-        <label for="f-goal">What would you like to learn or improve?</label>
-        <textarea id="f-goal" placeholder="e.g. I'd love to improve my spoken English — or my daughter is starting to read and needs gentle help."></textarea>
+        <label for="f-goal" data-i18n="form.goal">What would you like to learn or improve?</label>
+        <textarea id="f-goal" data-i18n-placeholder="form.goal.placeholder" placeholder="e.g. I'd love to improve my spoken English — or my daughter is starting to read and needs gentle help."></textarea>
       </div>
       <div class="form-actions">
-        <button class="btn btn-primary" onclick="sendEmail()">Send my message ✉️</button>
+        <button class="btn btn-primary" onclick="sendEmail()" data-i18n="form.send">Send my message ✉️</button>
       </div>
-      <p class="form-hint">This opens a ready-written email to Adeyma in your mail app — nothing is stored on this page.</p>
+      <p class="form-hint" data-i18n="form.hint">This opens a ready-written email to Adeyma in your mail app — nothing is stored on this page.</p>
     </div>
   </div>
 </section>
@@ -448,44 +451,213 @@
   <div class="wrap">
     <div>
       <div class="name">Adeyma Tutoring Time</div>
-      <p>Failing is part of learning — let's find the right direction</p>
+      <p data-i18n="footer.tag">Failing is part of learning — let's find the right direction</p>
     </div>
     <div style="text-align:right">
-      <p><a href="#" class="classroom-link" target="_blank" rel="noopener">Join the Google Classroom →</a></p>
+      <p><a href="#" class="classroom-link" target="_blank" rel="noopener" data-i18n="footer.classroom">Join the Google Classroom →</a></p>
       <p style="margin-top:8px"><a href="mailto:Adeymatutoringtime@gmail.com">Adeymatutoringtime@gmail.com</a></p>
     </div>
   </div>
-  <div class="copyright">© <span id="year"></span> Learn with Adeyma · Made with care 🌿</div>
+  <div class="copyright">© <span id="year"></span> <span data-i18n="copyright">Learn with Adeyma · Made with care 🌿</span></div>
 </footer>
 
 <script>
-  /* =======================================================
-     ❤  ADEYMA — your details (already filled in)  ❤
-     ======================================================= */
   const CLASSROOM_URL = "https://classroom.google.com/c/ODYwOTI3NjgwOTE0?cjc=35kvqlpp";
   const EMAIL         = "Adeymatutoringtime@gmail.com";
-  /* ======================================================= */
 
-  // wire up every "Join the Classroom" link
   document.querySelectorAll('.classroom-link').forEach(a => { a.href = CLASSROOM_URL; });
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  /* ===================== TRANSLATIONS ===================== */
+  const I18N = {
+    en: {
+      "nav.about":"About","nav.subjects":"Subjects","nav.who":"Who it's for","nav.how":"How it works","nav.pricing":"Pricing","nav.join":"Join the Classroom",
+      "hero.eyebrow":"Friendly online tutoring · since 2023",
+      "hero.title":"Learn with <em>Adeyma</em>, at your own pace",
+      "hero.lead":"Warm, patient one-to-one lessons online for women, girls and young children. You tell me what you'd like to learn, and together we build a plan that fits you — growing in confidence, one step at a time.",
+      "hero.cta1":"Join the Google Classroom","hero.cta2":"Tell me what you'd like to learn",
+      "trust.online":"100% online","trust.audience":"Girls & women · all ages","trust.cert":"TEFL/TESOL certified","trust.from":"From €5 a lesson",
+      "subjects.h":"What I teach","subjects.p":"A handful of subjects, taught with real care. Whether it's a first word or an exam, we go step by step.",
+      "subj.english.title":"English","subj.english.body":"My main love — and most of what I teach. Speaking, reading, writing, grammar and confidence, from complete beginners through to advanced learners and exam prep.","subj.english.tag":"All ages · all levels",
+      "subj.arabic.title":"Arabic","subj.arabic.body":"Gentle, structured Arabic lessons up to <strong>Tamheedi 2</strong> level — building strong foundations one letter and word at a time.","subj.arabic.tag":"Up to Tamheedi 2",
+      "subj.islamic.title":"Islamic Studies","subj.islamic.body":"Friendly lessons covering the essentials, explained clearly and patiently in a way that suits each learner's age.","subj.islamic.tag":"Girls, women & young boys",
+      "subj.math.title":"Basic Math","subj.math.body":"Numbers made fun and friendly — counting, sums and early problem-solving, designed especially for younger children.","subj.math.tag":"For kids",
+      "subj.qaida.title":"Qaida Noorania","subj.qaida.body":"Step-by-step Qur'anic reading from the very beginning — correct letters, sounds and fluency, at a calm and steady pace.","subj.qaida.tag":"Foundations of reading",
+      "about.greet":"Assalamu alaikum wa rahmatullahi wa barakatuh 🌙","about.role":"I'm Adeyma — the teacher behind Adeyma Tutoring Time",
+      "about.p1":"I'm a <strong>TEFL/TESOL-certified</strong> English teacher, and I've been tutoring since 2023 — warm, patient one-to-one lessons, all online, for women, girls and young children.",
+      "about.p2":"I'm also studying for a <strong>BSc in Psychology</strong>, which shapes the way I teach: lessons are gentle, encouraging and built around how each person really learns. A shy or struggling learner is always met with calm and kindness.",
+      "about.p3":"To keep things fun, I use lively tools like Kahoot, Blooket, Wordwall and Canva — with clear goals, gentle practice and homework that genuinely helps. I also speak Dutch, French and Arabic, which comes in handy when a child needs a little support in another language.",
+      "about.chip1":"TEFL/TESOL certified","about.chip2":"IELTS verified English","about.chip3":"BSc Psychology (in progress)",
+      "ages.h":"Welcoming learners of every age","ages.p":"I shape every lesson around the person in front of me — whether that's a curious little one or a grown-up returning to study.",
+      "ages.little.t":"Little ones","ages.little.b":"Playful, gentle first lessons that keep young children curious and happy.",
+      "ages.teen.t":"Teenagers","ages.teen.b":"School support, exam prep and confidence-building, at their own rhythm.",
+      "ages.adult.t":"Adults","ages.adult.b":"Flexible lessons that fit busy lives — no pressure, just steady progress.",
+      "ages.note":"🤍 A respectful note: I warmly welcome <strong style=\"color:var(--sage-deep)\">women and girls of all ages</strong>, and <strong style=\"color:var(--sage-deep)\">boys up to 10 years old</strong>.",
+      "how.h":"How it works","how.p":"Simple and relaxed. Here's the whole journey, from hello to your first lesson.",
+      "how.s1t":"Join the Classroom","how.s1b":"Tap the button to join my Google Classroom — that's our cosy home base for everything.",
+      "how.s2t":"Tell me your lesson","how.s2b":"Fill in who it's for, the subject you'd like, and what you're hoping to learn.",
+      "how.s3t":"We meet & chat","how.s3b":"We have a friendly first meeting to understand the level, goals and what works best.",
+      "how.s4t":"We build it up","how.s4b":"Together we shape a plan and grow from there — one comfortable step at a time.",
+      "pricing.h":"Simple, honest pricing","pricing.p":"No hidden fees. Just clear, fair rates for caring one-to-one lessons.",
+      "pricing.full.when":"Full lesson","pricing.full.unit":" / hour","pricing.full.note":"A full hour to dive in properly — ideal for steady progress.",
+      "pricing.short.when":"Short lesson","pricing.short.unit":" / 30 min","pricing.short.note":"A shorter session — lovely for young children or a quick top-up.",
+      "pricing.foot":"Not sure which fits you? Just ask below and we'll figure it out together. 🌿",
+      "enquire.h":"Tell me what you'd like to learn","enquire.p":"Fill this in and it'll send me a friendly email. After that, we'll arrange our first meeting.",
+      "form.name":"Your name","form.name.placeholder":"e.g. Sara",
+      "form.who":"Who is the lesson for?","form.who.1":"Myself","form.who.2":"My daughter","form.who.3":"My son (under 10)","form.who.4":"Someone else",
+      "form.subject":"Which subject?","form.subj.1":"English","form.subj.2":"Arabic (up to Tamheedi 2)","form.subj.3":"Islamic Studies","form.subj.4":"Basic Math (for kids)","form.subj.5":"Qaida Noorania","form.subj.6":"Not sure yet",
+      "form.length":"Lesson length","form.len.1":"1 hour — €10","form.len.2":"30 minutes — €5","form.len.3":"Let's decide together",
+      "form.goal":"What would you like to learn or improve?","form.goal.placeholder":"e.g. I'd love to improve my spoken English — or my daughter is starting to read and needs gentle help.",
+      "form.send":"Send my message ✉️","form.hint":"This opens a ready-written email to Adeyma in your mail app — nothing is stored on this page.",
+      "footer.tag":"Failing is part of learning — let's find the right direction","footer.classroom":"Join the Google Classroom →","copyright":"Learn with Adeyma · Made with care 🌿",
+      "email.greeting":"Assalamu alaikum Adeyma! 🌙","email.name":"Name","email.for":"Lesson for","email.subject":"Subject","email.length":"Lesson length","email.goal":"What I'd like to learn:","email.noName":"(no name given)","email.noGoal":"(nothing written yet)","email.subjectLine":"New lesson enquiry from your website"
+    },
+    fr: {
+      "nav.about":"À propos","nav.subjects":"Matières","nav.who":"Pour qui","nav.how":"Comment ça marche","nav.pricing":"Tarifs","nav.join":"Rejoindre la Classroom",
+      "hero.eyebrow":"Cours particuliers en ligne · depuis 2023",
+      "hero.title":"Apprends avec <em>Adeyma</em>, à ton propre rythme",
+      "hero.lead":"Des cours particuliers chaleureux et patients, en ligne, pour les femmes, les filles et les jeunes enfants. Tu me dis ce que tu aimerais apprendre, et ensemble nous construisons un plan qui te ressemble — pour gagner en confiance, pas à pas.",
+      "hero.cta1":"Rejoindre la Google Classroom","hero.cta2":"Dis-moi ce que tu aimerais apprendre",
+      "trust.online":"100% en ligne","trust.audience":"Filles & femmes · tous âges","trust.cert":"Certifiée TEFL/TESOL","trust.from":"À partir de 5 € le cours",
+      "subjects.h":"Ce que j'enseigne","subjects.p":"Quelques matières, enseignées avec beaucoup de soin. Du premier mot à la préparation d'un examen, on avance pas à pas.",
+      "subj.english.title":"Anglais","subj.english.body":"Ma grande passion — et ce que j'enseigne le plus. Parler, lire, écrire, la grammaire et la confiance, du tout débutant au niveau avancé, y compris la préparation aux examens.","subj.english.tag":"Tous âges · tous niveaux",
+      "subj.arabic.title":"Arabe","subj.arabic.body":"Des cours d'arabe doux et structurés jusqu'au niveau <strong>Tamheedi 2</strong> — pour construire des bases solides, une lettre et un mot à la fois.","subj.arabic.tag":"Jusqu'à Tamheedi 2",
+      "subj.islamic.title":"Études islamiques","subj.islamic.body":"Des cours bienveillants couvrant l'essentiel, expliqués clairement et patiemment selon l'âge de chaque élève.","subj.islamic.tag":"Filles, femmes & jeunes garçons",
+      "subj.math.title":"Mathématiques de base","subj.math.body":"Les nombres rendus amusants et accessibles — compter, additionner et résoudre des petits problèmes, surtout pour les jeunes enfants.","subj.math.tag":"Pour les enfants",
+      "subj.qaida.title":"Qaida Noorania","subj.qaida.body":"La lecture coranique pas à pas dès le début — lettres correctes, sons et fluidité, à un rythme calme et régulier.","subj.qaida.tag":"Fondations de la lecture",
+      "about.greet":"Assalamu alaikum wa rahmatullahi wa barakatuh 🌙","about.role":"Je suis Adeyma — la professeure derrière Adeyma Tutoring Time",
+      "about.p1":"Je suis professeure d'anglais <strong>certifiée TEFL/TESOL</strong> et je donne des cours depuis 2023 — des leçons particulières chaleureuses et patientes, entièrement en ligne, pour les femmes, les filles et les jeunes enfants.",
+      "about.p2":"Je suis aussi étudiante en <strong>licence de psychologie</strong>, ce qui façonne ma manière d'enseigner : des cours doux, encourageants et adaptés à la façon dont chaque personne apprend vraiment. Un élève timide ou en difficulté est toujours accueilli avec calme et bienveillance.",
+      "about.p3":"Pour rendre les cours vivants, j'utilise des outils ludiques comme Kahoot, Blooket, Wordwall et Canva — avec des objectifs clairs, des exercices doux et des devoirs vraiment utiles. Je parle aussi le néerlandais, le français et l'arabe, ce qui aide quand un enfant a besoin d'un petit soutien dans une autre langue.",
+      "about.chip1":"Certifiée TEFL/TESOL","about.chip2":"Anglais vérifié IELTS","about.chip3":"Licence de psychologie (en cours)",
+      "ages.h":"Des apprenants de tout âge bienvenus","ages.p":"Je construis chaque cours autour de la personne en face de moi — qu'il s'agisse d'un petit curieux ou d'un adulte qui reprend ses études.",
+      "ages.little.t":"Les petits","ages.little.b":"Des premières leçons douces et ludiques qui gardent les jeunes enfants curieux et heureux.",
+      "ages.teen.t":"Adolescents","ages.teen.b":"Soutien scolaire, préparation aux examens et confiance, à leur propre rythme.",
+      "ages.adult.t":"Adultes","ages.adult.b":"Des cours flexibles qui s'adaptent aux vies bien remplies — sans pression, juste des progrès réguliers.",
+      "ages.note":"🤍 Une petite note respectueuse : j'accueille chaleureusement les <strong style=\"color:var(--sage-deep)\">femmes et filles de tous âges</strong>, et les <strong style=\"color:var(--sage-deep)\">garçons jusqu'à 10 ans</strong>.",
+      "how.h":"Comment ça marche","how.p":"Simple et détendu. Voici tout le parcours, du bonjour à ton premier cours.",
+      "how.s1t":"Rejoindre la Classroom","how.s1b":"Clique sur le bouton pour rejoindre ma Google Classroom — c'est notre petit cocon pour tout.",
+      "how.s2t":"Dis-moi ton cours","how.s2b":"Indique pour qui c'est, la matière souhaitée et ce que tu espères apprendre.",
+      "how.s3t":"On se rencontre","how.s3b":"On fait une première rencontre amicale pour comprendre le niveau, les objectifs et ce qui te convient le mieux.",
+      "how.s4t":"On construit ensemble","how.s4b":"Ensemble, on dessine un plan et on avance — un pas confortable à la fois.",
+      "pricing.h":"Tarifs simples et honnêtes","pricing.p":"Aucun frais caché. Juste des tarifs clairs et justes pour des cours particuliers bienveillants.",
+      "pricing.full.when":"Cours complet","pricing.full.unit":" / heure","pricing.full.note":"Une heure entière pour vraiment plonger dans le sujet — idéal pour des progrès réguliers.",
+      "pricing.short.when":"Cours court","pricing.short.unit":" / 30 min","pricing.short.note":"Une session plus courte — parfait pour les jeunes enfants ou un petit rappel rapide.",
+      "pricing.foot":"Tu ne sais pas lequel te convient ? Demande ci-dessous et on trouvera ensemble. 🌿",
+      "enquire.h":"Dis-moi ce que tu aimerais apprendre","enquire.p":"Remplis ce formulaire et il m'enverra un email amical. Ensuite, on organise notre première rencontre.",
+      "form.name":"Ton prénom","form.name.placeholder":"ex. Sara",
+      "form.who":"Pour qui est le cours ?","form.who.1":"Pour moi","form.who.2":"Pour ma fille","form.who.3":"Pour mon fils (moins de 10 ans)","form.who.4":"Pour quelqu'un d'autre",
+      "form.subject":"Quelle matière ?","form.subj.1":"Anglais","form.subj.2":"Arabe (jusqu'à Tamheedi 2)","form.subj.3":"Études islamiques","form.subj.4":"Maths de base (pour enfants)","form.subj.5":"Qaida Noorania","form.subj.6":"Pas encore sûr·e",
+      "form.length":"Durée du cours","form.len.1":"1 heure — 10 €","form.len.2":"30 minutes — 5 €","form.len.3":"On décide ensemble",
+      "form.goal":"Que voudrais-tu apprendre ou améliorer ?","form.goal.placeholder":"ex. J'aimerais améliorer mon anglais à l'oral — ou ma fille commence à lire et a besoin d'un peu d'aide en douceur.",
+      "form.send":"Envoyer mon message ✉️","form.hint":"Cela ouvre un email tout prêt pour Adeyma dans ton application mail — rien n'est stocké sur cette page.",
+      "footer.tag":"Échouer fait partie de l'apprentissage — trouvons la bonne direction","footer.classroom":"Rejoindre la Google Classroom →","copyright":"Apprends avec Adeyma · Fait avec soin 🌿",
+      "email.greeting":"Assalamu alaikum Adeyma ! 🌙","email.name":"Prénom","email.for":"Cours pour","email.subject":"Matière","email.length":"Durée du cours","email.goal":"Ce que j'aimerais apprendre :","email.noName":"(prénom non renseigné)","email.noGoal":"(rien d'écrit pour l'instant)","email.subjectLine":"Nouvelle demande de cours depuis ton site"
+    },
+    nl: {
+      "nav.about":"Over mij","nav.subjects":"Vakken","nav.who":"Voor wie","nav.how":"Hoe het werkt","nav.pricing":"Tarieven","nav.join":"Sluit je aan bij de Classroom",
+      "hero.eyebrow":"Vriendelijke online bijles · sinds 2023",
+      "hero.title":"Leer met <em>Adeyma</em>, in jouw eigen tempo",
+      "hero.lead":"Warme, geduldige één-op-één lessen online voor vrouwen, meisjes en jonge kinderen. Jij vertelt me wat je wilt leren en samen bouwen we een plan dat bij jou past — vol vertrouwen, stap voor stap.",
+      "hero.cta1":"Sluit je aan bij de Google Classroom","hero.cta2":"Vertel me wat je wilt leren",
+      "trust.online":"100% online","trust.audience":"Meisjes & vrouwen · alle leeftijden","trust.cert":"TEFL/TESOL gecertificeerd","trust.from":"Vanaf € 5 per les",
+      "subjects.h":"Wat ik geef","subjects.p":"Een handvol vakken, met echte zorg gegeven. Of het nu een eerste woord of een examen is, we gaan stap voor stap.",
+      "subj.english.title":"Engels","subj.english.body":"Mijn grote liefde — en wat ik het meeste geef. Spreken, lezen, schrijven, grammatica en zelfvertrouwen, van complete beginners tot gevorderden en examenvoorbereiding.","subj.english.tag":"Alle leeftijden · alle niveaus",
+      "subj.arabic.title":"Arabisch","subj.arabic.body":"Zachte, gestructureerde Arabische lessen tot <strong>Tamheedi 2</strong> niveau — een sterke basis bouwen, letter voor letter en woord voor woord.","subj.arabic.tag":"Tot Tamheedi 2",
+      "subj.islamic.title":"Islamitische studies","subj.islamic.body":"Vriendelijke lessen over de essentie, duidelijk en geduldig uitgelegd, passend bij de leeftijd van elke leerling.","subj.islamic.tag":"Meisjes, vrouwen & jonge jongens",
+      "subj.math.title":"Basis rekenen","subj.math.body":"Cijfers leuk en toegankelijk gemaakt — tellen, sommen en eerste puzzeltjes, speciaal voor jonge kinderen.","subj.math.tag":"Voor kinderen",
+      "subj.qaida.title":"Qaida Noorania","subj.qaida.body":"Stap voor stap Koran lezen vanaf het allereerste begin — juiste letters, klanken en vloeiendheid, in een rustig en stabiel tempo.","subj.qaida.tag":"De basis van het lezen",
+      "about.greet":"Assalamu alaikum wa rahmatullahi wa barakatuh 🌙","about.role":"Ik ben Adeyma — de juf achter Adeyma Tutoring Time",
+      "about.p1":"Ik ben een <strong>TEFL/TESOL-gecertificeerde</strong> docent Engels en geef sinds 2023 bijles — warme, geduldige één-op-één lessen, helemaal online, voor vrouwen, meisjes en jonge kinderen.",
+      "about.p2":"Ik studeer ook voor een <strong>BSc psychologie</strong>, en dat vormt de manier waarop ik lesgeef: zachte, bemoedigende lessen, opgebouwd rond hoe iedereen écht leert. Een verlegen of worstelende leerling wordt altijd met kalmte en vriendelijkheid ontvangen.",
+      "about.p3":"Om het leuk te houden gebruik ik levendige tools zoals Kahoot, Blooket, Wordwall en Canva — met heldere doelen, zachte oefeningen en huiswerk dat écht helpt. Ik spreek ook Nederlands, Frans en Arabisch, wat handig is als een kind even hulp nodig heeft in een andere taal.",
+      "about.chip1":"TEFL/TESOL gecertificeerd","about.chip2":"IELTS-geverifieerd Engels","about.chip3":"BSc Psychologie (bezig)",
+      "ages.h":"Welkom voor leerlingen van elke leeftijd","ages.p":"Ik vorm elke les rond de persoon tegenover me — of dat nu een nieuwsgierig kind is of een volwassene die weer gaat studeren.",
+      "ages.little.t":"Kleintjes","ages.little.b":"Speelse, zachte eerste lessen die jonge kinderen nieuwsgierig en blij houden.",
+      "ages.teen.t":"Tieners","ages.teen.b":"Schoolondersteuning, examenvoorbereiding en zelfvertrouwen opbouwen, in hun eigen ritme.",
+      "ages.adult.t":"Volwassenen","ages.adult.b":"Flexibele lessen die in een druk leven passen — geen druk, gewoon gestage vooruitgang.",
+      "ages.note":"🤍 Een respectvolle noot: ik verwelkom hartelijk <strong style=\"color:var(--sage-deep)\">vrouwen en meisjes van alle leeftijden</strong>, en <strong style=\"color:var(--sage-deep)\">jongens tot 10 jaar</strong>.",
+      "how.h":"Hoe het werkt","how.p":"Eenvoudig en ontspannen. Hier is de hele reis, van hallo tot je eerste les.",
+      "how.s1t":"Sluit je aan bij de Classroom","how.s1b":"Tik op de knop om mijn Google Classroom te joinen — dat is ons gezellige thuis voor alles.",
+      "how.s2t":"Vertel me je les","how.s2b":"Vul in voor wie het is, het vak dat je wilt en wat je hoopt te leren.",
+      "how.s3t":"We ontmoeten elkaar","how.s3b":"We hebben een vriendelijk eerste gesprek om het niveau, de doelen en wat het beste werkt te begrijpen.",
+      "how.s4t":"We bouwen het op","how.s4b":"Samen maken we een plan en groeien we verder — één comfortabele stap tegelijk.",
+      "pricing.h":"Eenvoudige, eerlijke tarieven","pricing.p":"Geen verborgen kosten. Gewoon duidelijke, eerlijke tarieven voor liefdevolle één-op-één lessen.",
+      "pricing.full.when":"Volledige les","pricing.full.unit":" / uur","pricing.full.note":"Een vol uur om er goed in te duiken — ideaal voor gestage vooruitgang.",
+      "pricing.short.when":"Korte les","pricing.short.unit":" / 30 min","pricing.short.note":"Een kortere sessie — heerlijk voor jonge kinderen of een snelle opfrisser.",
+      "pricing.foot":"Weet je niet zeker wat past? Vraag het hieronder en we komen er samen uit. 🌿",
+      "enquire.h":"Vertel me wat je wilt leren","enquire.p":"Vul dit in en het stuurt me een vriendelijke e-mail. Daarna spreken we een eerste afspraak af.",
+      "form.name":"Je naam","form.name.placeholder":"bijv. Sara",
+      "form.who":"Voor wie is de les?","form.who.1":"Voor mezelf","form.who.2":"Voor mijn dochter","form.who.3":"Voor mijn zoon (onder de 10)","form.who.4":"Voor iemand anders",
+      "form.subject":"Welk vak?","form.subj.1":"Engels","form.subj.2":"Arabisch (tot Tamheedi 2)","form.subj.3":"Islamitische studies","form.subj.4":"Basis rekenen (voor kinderen)","form.subj.5":"Qaida Noorania","form.subj.6":"Nog niet zeker",
+      "form.length":"Lesduur","form.len.1":"1 uur — € 10","form.len.2":"30 minuten — € 5","form.len.3":"Laten we samen beslissen",
+      "form.goal":"Wat wil je leren of verbeteren?","form.goal.placeholder":"bijv. Ik wil mijn gesproken Engels verbeteren — of mijn dochter begint te lezen en heeft zachte hulp nodig.",
+      "form.send":"Verstuur mijn bericht ✉️","form.hint":"Dit opent een kant-en-klare e-mail aan Adeyma in je mail-app — er wordt niets op deze pagina opgeslagen.",
+      "footer.tag":"Falen is een deel van leren — laten we de juiste richting vinden","footer.classroom":"Sluit je aan bij de Google Classroom →","copyright":"Leer met Adeyma · Met zorg gemaakt 🌿",
+      "email.greeting":"Assalamu alaikum Adeyma! 🌙","email.name":"Naam","email.for":"Les voor","email.subject":"Vak","email.length":"Lesduur","email.goal":"Wat ik wil leren:","email.noName":"(geen naam opgegeven)","email.noGoal":"(nog niets geschreven)","email.subjectLine":"Nieuwe les-aanvraag via je website"
+    }
+  };
+
+  let currentLang = 'en';
+
+  function applyLang(lang){
+    const dict = I18N[lang] || I18N.en;
+    currentLang = lang;
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const k = el.getAttribute('data-i18n');
+      if (dict[k] != null) el.textContent = dict[k];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const k = el.getAttribute('data-i18n-html');
+      if (dict[k] != null) el.innerHTML = dict[k];
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const k = el.getAttribute('data-i18n-placeholder');
+      if (dict[k] != null) el.setAttribute('placeholder', dict[k]);
+    });
+
+    document.querySelectorAll('.lang button').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+
+    try { localStorage.setItem('lang', lang); } catch(e){}
+  }
+
+  document.querySelectorAll('.lang button').forEach(b => {
+    b.addEventListener('click', () => applyLang(b.dataset.lang));
+  });
+
+  // initial language: saved → browser → en
+  let initial = 'en';
+  try {
+    const saved = localStorage.getItem('lang');
+    if (saved && I18N[saved]) initial = saved;
+    else {
+      const nav = (navigator.language || 'en').slice(0,2).toLowerCase();
+      if (I18N[nav]) initial = nav;
+    }
+  } catch(e){}
+  applyLang(initial);
+
   function buildMessage(){
-    const name = document.getElementById('f-name').value.trim() || "(no name given)";
+    const d = I18N[currentLang] || I18N.en;
+    const name = document.getElementById('f-name').value.trim() || d["email.noName"];
     const who = document.getElementById('f-who').value;
     const subject = document.getElementById('f-subject').value;
     const length = document.getElementById('f-length').value;
-    const goal = document.getElementById('f-goal').value.trim() || "(nothing written yet)";
-    return `Assalamu alaikum Adeyma! 🌙\n\nName: ${name}\nLesson for: ${who}\nSubject: ${subject}\nLesson length: ${length}\n\nWhat I'd like to learn:\n${goal}`;
+    const goal = document.getElementById('f-goal').value.trim() || d["email.noGoal"];
+    return `${d["email.greeting"]}\n\n${d["email.name"]}: ${name}\n${d["email.for"]}: ${who}\n${d["email.subject"]}: ${subject}\n${d["email.length"]}: ${length}\n\n${d["email.goal"]}\n${goal}`;
   }
 
   function sendEmail(){
-    const subject = encodeURIComponent("New lesson enquiry from your website");
+    const d = I18N[currentLang] || I18N.en;
+    const subject = encodeURIComponent(d["email.subjectLine"]);
     const body = encodeURIComponent(buildMessage());
     window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
   }
 
-  // gentle scroll reveal
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
   }, {threshold:.14});
