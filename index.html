@@ -655,7 +655,9 @@
     const d = I18N[currentLang] || I18N.en;
     const subject = encodeURIComponent(d["email.subjectLine"]);
     const body = encodeURIComponent(buildMessage());
-    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+    // Open Gmail compose in a new tab, pre-addressed to Adeyma's inbox.
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(EMAIL)}&su=${subject}&body=${body}`;
+    window.open(gmailUrl, '_blank', 'noopener');
   }
 
   const io = new IntersectionObserver((entries)=>{
